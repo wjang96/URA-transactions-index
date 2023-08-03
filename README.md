@@ -1,5 +1,6 @@
 # URA-transactions-private-properties
 This repo give insights about transactions statistics of non-landed private properties rental costs in Singapore (EC & Condos)
+
 **Output file:**
 1. Price Index by Singapore Districts & No. of Bedroom
 2. Price Index by Project & No. of Bedroom
