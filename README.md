@@ -1,4 +1,3 @@
-![image](https://github.com/wjang96/URA-transactions-index/assets/72901512/4167fe79-30f4-415e-9b72-06448de6b15f)![image](https://github.com/wjang96/URA-transactions-index/assets/72901512/cc8d9528-99a2-4ef9-8905-932f090ee425)# URA-transactions-private-properties
 This repo give insights about transactions statistics of non-landed private properties rental costs in Singapore (EC & Condos)
 
 **Output file #1:**
