@@ -1,9 +1,8 @@
-# URA-transactions-private-properties
+![image](https://github.com/wjang96/URA-transactions-index/assets/72901512/4167fe79-30f4-415e-9b72-06448de6b15f)![image](https://github.com/wjang96/URA-transactions-index/assets/72901512/cc8d9528-99a2-4ef9-8905-932f090ee425)# URA-transactions-private-properties
 This repo give insights about transactions statistics of non-landed private properties rental costs in Singapore (EC & Condos)
 
-**Output file:**
+**Output file #1:**
 1. Price Index by Singapore Districts & No. of Bedroom
-2. Price Index by Project & No. of Bedroom
 
 Eg.
 
@@ -13,6 +12,17 @@ Eg.
 | `D01 Boat Quay / Raffles Place / Marina` | 4300 | 4900 | 5500 | 5950 | 6850 | 8000 |
 | `D02 Chinatown / Tanjong Pagar`          | 3800 | 4400 | 4800 | 4800 | 5500 | 6275 |
 | `D03 Alexandra / Commonwealth`           | 3600 | 3900 | 4200 | 4800 | 5300 | 5800 |
+
+**Output file #2:**
+2. Price Index by Project & No. of Bedroom
+
+Eg.
+
+| Project | noOfBedRoom | rental_rent| mean_areaSqft| 
+| --------------- | ---------------- | ---------------- | ---------------- |
+| `HILLVIEW HEIGHTS` | 2 | 3666.66 | 950 |
+| `HILLVIEW HEIGHTS` | 3 | 3950 | 1200 |
+| `HILLVIEW HEIGHTS` | 4 | 5750 | 1650 |
 
 **Steps:**
 1. Source File is extracted from URA API call - https://www.ura.gov.sg/maps/api/#private-residential-properties-rental-contract (Please register for account and obtain API key)
