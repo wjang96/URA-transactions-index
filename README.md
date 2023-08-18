@@ -13,6 +13,7 @@ Eg.
 | `D03 Alexandra / Commonwealth`           | 3600 | 3900 | 4200 | 4800 | 5300 | 5800 |
 
 **Output file #2:**
+
 2. Price Index by Project & No. of Bedroom
 
 Eg.
