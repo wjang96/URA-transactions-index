@@ -7,9 +7,15 @@ Created on Mon Aug 21 11:26:02 2023
 import json
 import requests
 import pandas as pd
+import csv
+import json
+
+# Enter the YearQuarter you wish to extract the data from the API call
+refperiod = '23q3'
+
 # Register an account with URA to obtain your access key 
 # Send GET Request to retrieve daily Token
-api_accesskey = 'Put your own access key'
+api_accesskey = 'Put your own API call'
 api_url_base= 'https://www.ura.gov.sg/uraDataService/insertNewToken.action'
 
 headers = {'Content-Type': 'application/json',
@@ -31,15 +37,6 @@ if token_info is not None:
     print("Here's your token: "+'\n'+token_info['Result'])    
 else:
     print('[!] Request Failed')
-
-
-
-# Determine previous month of current period based on Today's date to enter 'refPeriod' Parameter
-today = pd.to_datetime('today')
-previous_month = today - pd.DateOffset(months=1)
-period = previous_month.to_period('D').strftime('%Yq%q')
-refperiod = period[-4:]
-print(refperiod)
 
 
 #send GET Request to retrieve a list of median rentals of private non-landed residential properties based on refPeriod
@@ -74,14 +71,5 @@ from pandas.io.json import json_normalize
 data = data_info['Result']
 flattendata = json_normalize(data,'rental',['project','street','y','x'],errors='ignore')
 
-# URA Publishes previous month's data; Determine previous month mmYY from period YYqq
-previousMMYY = previous_month.to_period('D').strftime('%m%Y')
-leaseDate = previousMMYY[0:2]+previousMMYY[-2:]
-print(leaseDate)
-
-#get data for the latest month only from a quarterly-period dataset
-LatestMonthData = flattendata.loc[flattendata['leaseDate'] == leaseDate]
-print(LatestMonthData)
-
 #convert json data to .csv file, removing the index number
-LatestMonthData.to_csv('flatten_data_' + leaseDate +'.csv', index=False)
+flattendata.to_csv('transaction_resi_converted_raw_csv_' + refperiod + '.csv', index=False)
